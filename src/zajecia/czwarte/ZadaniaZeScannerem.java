@@ -8,14 +8,26 @@ import java.util.Scanner;
 public class ZadaniaZeScannerem {
     public static void main(String[] args) {
         //scannerExample();
-        checkNumberFromUser();
+        //checkNumberFromUser();
+        listNumberFromUser();
+    }
+
+    public static void listNumberFromUser(){
+        int number = getNumberFromUser();
+        Zajecia4.printLessThan(number);
+    }
+
+    public static int getNumberFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please insert some number:");
+        return scanner.nextInt();
     }
 
     public static void checkNumberFromUser() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please insert some number:");
-        int number = scanner.nextInt();
-        if(Zajecia4.isEven(number)) {
+        int numberFromUser = getNumberFromUser();
+        if(Zajecia4.isEven(numberFromUser)) {
             System.out.println("Number is even");
         } else {
             System.out.println("Number is odd");
