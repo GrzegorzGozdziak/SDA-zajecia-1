@@ -16,10 +16,36 @@ public class ZadaniaZeScannerem {
         //System.out.println("MIN from array: "+min(array));
         //System.out.println("MAX from array: "+max(array));
 
-        double avg = avgOfGrades();
-        System.out.println("Your AVG is equal: " + avg);
+        //double avg = avgOfGrades();
+        //System.out.println("Your AVG is equal: " + avg);
+        int calculator = calculator();
+        System.out.println("Twoj wynik to: "+calculator);
 
 
+    }
+    public static int calculator() {
+        System.out.println("Kalkulator - dostepne opcje:");
+        System.out.println("1. Dodawanie");
+        System.out.println("2. Odejmowanie");
+        System.out.println("3. Mnozenie");
+        System.out.println("4. Dzielenie");
+        int action = getNumberFromUser("Podaj numer dzialania, ktore chcesz wykonac:");
+        int number1 = getNumberFromUser("Podaj pierwsza liczbe: ");
+        int number2 = getNumberFromUser("Podaj druga liczbe: ");
+        if(action == 1) {
+            return number1 + number2;
+        } else if(action == 2) {
+            return number1 - number2;
+        } else if(action == 3) {
+            return number1*number2;
+        }else {
+            if(number2 == 0 ){
+                System.out.println("Nie dzielimy przez 0!");
+                return 0;
+            } else {
+                return number1/number2;
+            }
+        }
     }
 
     public static double avgOfGrades() {
