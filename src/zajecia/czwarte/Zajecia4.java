@@ -1,4 +1,6 @@
-package zajecia;
+package zajecia.czwarte;
+
+import java.util.Scanner;
 
 /**
  * Created by RENT on 2017-02-04.
@@ -26,6 +28,8 @@ public class Zajecia4 {
 
 
     }
+
+
 
     public static void statistics(int[] array) {
         //srednia wszystkich elementow w tablicy
