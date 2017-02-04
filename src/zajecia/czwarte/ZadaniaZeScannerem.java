@@ -18,33 +18,40 @@ public class ZadaniaZeScannerem {
 
         //double avg = avgOfGrades();
         //System.out.println("Your AVG is equal: " + avg);
-        int calculator = calculator();
-        System.out.println("Twoj wynik to: "+calculator);
+
+
+        calculator();
 
 
     }
-    public static int calculator() {
-        System.out.println("Kalkulator - dostepne opcje:");
-        System.out.println("1. Dodawanie");
-        System.out.println("2. Odejmowanie");
-        System.out.println("3. Mnozenie");
-        System.out.println("4. Dzielenie");
-        int action = getNumberFromUser("Podaj numer dzialania, ktore chcesz wykonac:");
-        int number1 = getNumberFromUser("Podaj pierwsza liczbe: ");
-        int number2 = getNumberFromUser("Podaj druga liczbe: ");
-        if(action == 1) {
-            return number1 + number2;
-        } else if(action == 2) {
-            return number1 - number2;
-        } else if(action == 3) {
-            return number1*number2;
-        }else {
-            if(number2 == 0 ){
-                System.out.println("Nie dzielimy przez 0!");
-                return 0;
+
+    public static void calculator() {
+        System.out.println("Calculator - options list:");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        int action = getNumberFromUser("Please insert a number of option:");
+        int result = 0;
+        if (action < 0 || action > 4) {
+            System.out.println("You selected the incorrect options");
+        } else {
+            int number1 = getNumberFromUser("Insert first number: ");
+            int number2 = getNumberFromUser("Inser second number: ");
+            if (action == 1) {
+                result = number1 + number2;
+            } else if (action == 2) {
+                result = number1 - number2;
+            } else if (action == 3) {
+                result = number1 * number2;
             } else {
-                return number1/number2;
+                if (number2 == 0) {
+                    System.out.println("We do not divide by 0!");
+                } else {
+                    result = number1 / number2;
+                }
             }
+            System.out.println("Your result is: " + result);
         }
     }
 
