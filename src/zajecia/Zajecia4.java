@@ -37,16 +37,12 @@ public class Zajecia4 {
         //iloczyn elementow
         System.out.println("Iloczyn wszystkich elementow: "+productOfAll(array));
 
-        //suma parzystych
-        System.out.println("Suma el. parzystych: "+sumOfAllEven(array));
+        //ilosc parzystych
+        System.out.println("Ilosc el. parzystych: "+numberOfAllEven(array));
 
-        //suma nieparzystych
-        System.out.println("Suma el. nieparzystych: "+sumOfAllOdd(array));
-        //1. srednia elementow
-        //2. suma elementow
-        //3. iloczyn elementow
-        //4. suma parzystych
-        //5. suma nieparzystych
+        //ilosc nieparzystych
+        System.out.println("Ilosc el. nieparzystych: "+numberOfAllOdd(array));
+
     }
 
     public static int sumOfAllEven(int[] array) {
@@ -59,8 +55,8 @@ public class Zajecia4 {
         return sum;
     }
 
-    public static int sumOfAllOdd(int[] array) {
-        int sum = numberOfAll(array) - sumOfAllEven(array);
+    public static int numberOfAllOdd(int[] array) {
+        int sum = numberOfAll(array) - numberOfAllEven(array);
         /*int sum = 0;
         for (int i = 0; i < array.length; i++) {
             if(!isEven(array[i])) {
@@ -97,6 +93,12 @@ public class Zajecia4 {
 
     public static int numberOfAllEven(int[] array){
         int counter = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(isEven(array[i])){
+                counter++;
+            }
+        }
+        return counter;
     }
 
     public static int productOfAll(int[] array) {
