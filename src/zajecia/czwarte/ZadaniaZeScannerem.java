@@ -20,9 +20,48 @@ public class ZadaniaZeScannerem {
         //System.out.println("Your AVG is equal: " + avg);
 
 
-        calculator();
+        //calculator();
+        calculateBMI();
 
 
+    }
+
+    public static void calculateBMI() {
+        System.out.println("Calculate Your BMI");
+        double weight = getDoubleFromUser("Please insert Your weight [in kilograms]");
+        double growth = getDoubleFromUser("Please insert Your growth [in meters]");
+        if(weight <= 0 || growth <= 0){
+            System.out.println("WRONG data inserted!");
+        } else {
+            double result = weight / (growth*growth);
+
+            double[] array = {16.0, 17.0, 18.5, 25, 30, 35, 40};
+            String[] array2 = {
+                    "starvation / wygłodzenie",
+                    "emaciation / wychudzenie [spowodowane czesto przez ciężką chorobę]",
+                    "underweight / niedowaga",
+                    "correct / wartość prawidłowa",
+                    "overweight / nadwaga",
+                    "the first stage of obesity / I stopień otyłości",
+                    "the second stage of obesity / II stopień otyłości",
+                    "the third stage of obesity / III stopień otyłości [skrajna otyłość]"
+            };
+
+
+            System.out.println("Your BMI is: "+result);
+
+            for (int i = 0; i < array.length; i++) {
+                if(i == 0 && result < array[i]){
+                        System.out.println(array2[i]);
+                } else {
+                    if(array[i] < result && result < array[i+1]){
+                        System.out.println(array2[i+1]);
+                    }
+                }
+            }
+
+
+        }
     }
 
     public static void calculator() {
@@ -117,6 +156,12 @@ public class ZadaniaZeScannerem {
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         return scanner.nextInt();
+    }
+
+    public static double getDoubleFromUser(String message) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(message);
+        return scanner.nextDouble();
     }
 
 
