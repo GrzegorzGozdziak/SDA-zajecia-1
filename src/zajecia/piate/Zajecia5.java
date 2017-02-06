@@ -20,16 +20,16 @@ public class Zajecia5 {
 //        printArray(arrayFromNumbersFromUser());
         Random random = new Random();
         int stepsToWin = game(random.nextInt(100));
-        System.out.println("U WIN! Ilość kroków: "+stepsToWin);
+        System.out.println("U WIN! Ilość kroków: " + stepsToWin);
     }
 
     public static int[] arrayFromNumbersFromUser() {
         int[] tmpArray = new int[100];
         int size = 0;
         boolean flag = true;
-        while(flag) {
+        while (flag) {
             int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Insert next number");
-            if(numberFromUser != 0) {
+            if (numberFromUser != 0) {
                 tmpArray[size] = numberFromUser;
                 size++;
             } else {
@@ -42,10 +42,10 @@ public class Zajecia5 {
     public static int game(int number) {
         int steps = 0;
         boolean flag = true;
-        while(flag) {
+        while (flag) {
             int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Podaj kolejną liczbę: ");
             steps++;
-            if(number == numberFromUser) {
+            if (number == numberFromUser) {
                 flag = false;
             } else if (number < numberFromUser) {
                 System.out.println("Podałeś zbyt dużą liczbę");
@@ -57,7 +57,7 @@ public class Zajecia5 {
     }
 
     public static int[] revriteArray(int[] bigArray, int size) {
-        int [] array = new int[size];
+        int[] array = new int[size];
         for (int i = 0; i < size; i++) {
             array[i] = bigArray[i];
         }
@@ -73,9 +73,9 @@ public class Zajecia5 {
     public static int sumOfNumbersFromUser() {
         int sum = 0;
         boolean flag = true;
-        while(flag) {
+        while (flag) {
             int numberFromUser = ZadaniaZeScannerem.getNumberFromUser("Insert next number");
-            if(numberFromUser != 0) {
+            if (numberFromUser != 0) {
                 sum += numberFromUser;
             } else {
                 flag = false;
