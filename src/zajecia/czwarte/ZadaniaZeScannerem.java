@@ -54,7 +54,7 @@ public class ZadaniaZeScannerem {
                 if(i == 0 && result < array[i]){
                         System.out.println(array2[i]);
                 } else {
-                    if(array[i] < result && result < array[i+1]){
+                    if(array[i] <= result && result < array[i+1]){
                         System.out.println(array2[i+1]);
                     }
                 }
