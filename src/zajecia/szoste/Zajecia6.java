@@ -9,7 +9,35 @@ public class Zajecia6 {
     public static void main(String[] args) {
 //        System.out.println("Number of steps: "+sumUntil(10));
 //        System.out.println("Number of steps: "+avgUntil(2));
-        calculator();
+//        calculator();
+//        System.out.println(cezarCode("Wojna"));
+//        System.out.println(cezarCode("Hello World"));
+        System.out.println(decodeCezarCode("Xpkob", 1));
+
+    }
+
+    public static String decodeCezarCode(String coddedMessage) {
+        return cezarCode(coddedMessage, -1);
+    }
+
+    public static String decodeCezarCode(String coddedMessage, int key) {
+        char[] charArray = coddedMessage.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = (char) (charArray[i] - key);
+        }
+        return String.valueOf(charArray);
+    }
+
+    public static String cezarCode(String message) {
+        return cezarCode(message, 1);
+    }
+
+    public static String cezarCode(String message, int key) {
+        char[] charArray = message.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = (char) (charArray[i] + key);
+        }
+        return String.valueOf(charArray);
     }
 
 
