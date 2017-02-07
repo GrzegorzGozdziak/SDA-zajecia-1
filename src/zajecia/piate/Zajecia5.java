@@ -18,9 +18,34 @@ public class Zajecia5 {
 //        System.out.println(sumOfNumbersFromUser());
 //        System.out.println(arrayFromNumbersFromUser());
 //        printArray(arrayFromNumbersFromUser());
-        Random random = new Random();
-        int stepsToWin = game(random.nextInt(100));
-        System.out.println("U WIN! Ilość kroków: " + stepsToWin);
+//        Random random = new Random();
+//        int stepsToWin = game(random.nextInt(100));
+//        System.out.println("U WIN! Ilość kroków: " + stepsToWin);
+        int[] orderedArray = homework5();
+        printHomework(orderedArray);
+
+    }
+
+    public static int[] homework5() {
+        int[] array = new int[10];
+        boolean flag = true;
+        while(flag){
+            int numberFromUser = ZadaniaZeScannerem.getNumberFromUser();
+            if(numberFromUser>= 0 && numberFromUser <=9){
+                array[numberFromUser]++;
+            } else {
+                flag = false;
+            }
+        }
+        return array;
+    }
+
+    public static void printHomework(int[] orderedArray) {
+        for (int i = 0; i < orderedArray.length; i++) {
+            for (int j = 0; j < orderedArray[i]; j++) {
+                System.out.print(i);
+            }
+        }
     }
 
     public static int[] arrayFromNumbersFromUser() {
