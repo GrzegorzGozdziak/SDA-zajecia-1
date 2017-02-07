@@ -21,8 +21,8 @@ public class Zajecia5 {
 //        Random random = new Random();
 //        int stepsToWin = game(random.nextInt(100));
 //        System.out.println("U WIN! Ilość kroków: " + stepsToWin);
-        int[] orderedArray = homework5();
-        printHomework(orderedArray);
+//        int[] orderedArray = homework5();
+//        printHomework(orderedArray);
 
     }
 
