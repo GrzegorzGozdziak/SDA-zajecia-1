@@ -33,7 +33,6 @@ public class Zajecia7 {
 
     public static boolean checkRoundBraces(String message) {
         int braces = 0;
-        boolean flag = true;
         char[] charArray = message.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             if (charArray[i] == 40) {
@@ -41,17 +40,11 @@ public class Zajecia7 {
             } else if (charArray[i] == 41) {
                 braces--;
                 if (braces < 0) {
-                    flag = false;
                     break;
                 }
             }
         }
-//        if(braces == 0){
-//            return true;
-//        } else {
-//            return false;
-//        }
-        return flag && braces == 0;
+        return braces == 0;
     }
 
     public static int sumFromString(String message) {
