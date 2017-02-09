@@ -14,7 +14,7 @@ public class Zajecia7 {
 
         String string = "Ala_ma_kota";
         String string2 = "Test";
-        String string3 = "((3-8))";
+        String string3 = "()((3-8))";
         String string4 = "Ala ma 2 koty i 3 psy";
 
 //        String convertedString = convertSpace(string);
@@ -33,27 +33,33 @@ public class Zajecia7 {
 
     public static boolean checkRoundBraces(String message) {
         int braces = 0;
+        boolean flag = true;
         char[] charArray = message.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
-            if(charArray[i] == 40){
+            if (charArray[i] == 40) {
                 braces++;
-            } else if(charArray[i] == 41){
+            } else if (charArray[i] == 41) {
                 braces--;
+                if (braces < 0) {
+                    flag = false;
+                    break;
+                }
             }
         }
-        if(braces == 0){
-            return true;
-        } else {
-            return false;
-        }
+//        if(braces == 0){
+//            return true;
+//        } else {
+//            return false;
+//        }
+        return flag && braces == 0;
     }
 
     public static int sumFromString(String message) {
         char[] charArray = message.toCharArray();
         int sum = 0;
         for (int i = 0; i < charArray.length; i++) {
-            if(charArray[i] >= 48 && charArray[i] < 58){
-                sum += charArray[i]-48;
+            if (charArray[i] >= 48 && charArray[i] < 58) {
+                sum += charArray[i] - 48;
             }
         }
         return sum;
@@ -63,7 +69,7 @@ public class Zajecia7 {
         char[] charArray = message.toCharArray();
         boolean flag = true;
         for (int i = 0; i < charArray.length / 2; i++) {
-            if(charArray[i] != charArray[charArray.length - i - 1]) {
+            if (charArray[i] != charArray[charArray.length - i - 1]) {
                 flag = false;
                 break;
             }
@@ -72,9 +78,9 @@ public class Zajecia7 {
     }
 
 
-    public static String reversString(String message){
+    public static String reversString(String message) {
         char[] charArray = message.toCharArray();
-        for (int i = 0; i < charArray.length/2; i++) {
+        for (int i = 0; i < charArray.length / 2; i++) {
             char tmp = charArray[i];
             charArray[i] = charArray[charArray.length - 1 - i];
             charArray[charArray.length - 1 - i] = tmp;
@@ -82,18 +88,18 @@ public class Zajecia7 {
         return String.valueOf(charArray);
     }
 
-    public static String convertSpace(String message){
+    public static String convertSpace(String message) {
         char[] charArray = message.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
-            if(charArray[i] == 95){
-                charArray[i] = (char)32;
+            if (charArray[i] == 95) {
+                charArray[i] = (char) 32;
             }
 
         }
         return String.valueOf(charArray);
     }
 
-    public static String randomLowerCase(int size){
+    public static String randomLowerCase(int size) {
         Random random = new Random();
 
         //char[] array = new char[size];
@@ -106,7 +112,7 @@ public class Zajecia7 {
             //array[i] = (char)randomChar;
             // //String generatedValueAsString = String.valueOf((char)randomChar);
             // //tmpMessage += generatedValueAsString;
-            stringBulider.append((char)randomChar);
+            stringBulider.append((char) randomChar);
         }
 
         //return String.valueOf(array);
@@ -114,12 +120,12 @@ public class Zajecia7 {
         return stringBulider.toString();
     }
 
-    public static int[] stringStatistics(String message){
+    public static int[] stringStatistics(String message) {
         char[] charsArray = message.toCharArray();
         int[] statisticsArray = new int[26]; //bo chodzi o tablice małych liter
         for (int i = 0; i < charsArray.length; i++) {
-            if(charsArray[i]>=97 && charsArray[i]<=122){
-                int index = charsArray[i]-97;
+            if (charsArray[i] >= 97 && charsArray[i] <= 122) {
+                int index = charsArray[i] - 97;
                 statisticsArray[index]++;
             }
 
@@ -130,7 +136,7 @@ public class Zajecia7 {
     public static void printStringStatistics(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i]; j++) {
-                System.out.print((char)(i + 97));
+                System.out.print((char) (i + 97));
             }
         }
     }
