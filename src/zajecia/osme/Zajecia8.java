@@ -35,19 +35,12 @@ public class Zajecia8 {
 
     }
 
-    //Ala ma kota -> {"Ala", "ma", "kota"}
-//    public static String[] words(String message) {
-//        char[] charArray = message.toCharArray();
-//        for (int i = 0; i < charArray.length; i++) {
-//
-//        }
-//        return null;
-//    }
+    
 
     public static boolean startsWith1(String message, String expression){
         return message.startsWith(expression);
     }
-    
+
     /*
     * Can trow exeption
     */
