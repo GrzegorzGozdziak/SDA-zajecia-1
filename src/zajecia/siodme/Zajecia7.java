@@ -14,7 +14,7 @@ public class Zajecia7 {
 
         String string = "Ala_ma_kota";
         String string2 = "Test";
-        String string3 = "()((3-8))";
+        String string3 = "()((3-8)))";
         String string4 = "Ala ma 2 koty i 3 psy";
 
 //        String convertedString = convertSpace(string);
