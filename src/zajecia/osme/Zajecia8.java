@@ -28,14 +28,47 @@ public class Zajecia8 {
 //        System.out.println(sumOfDigitsFromNumberUpdate(number));
 
         String message = "Ala ma kota";
-        String expression = "Ala";
-        System.out.println(startsWith1(message, expression));
-        System.out.println(startsWith2(message, expression));
-        System.out.println(startsWith3(message, expression));
+//        String expression = "Ala";
+//        System.out.println(startsWith1(message, expression));
+//        System.out.println(startsWith2(message, expression));
+//        System.out.println(startsWith3(message, expression));
+        String[] strings;
+
+        System.out.println(split1(message));
 
     }
 
-    
+    //"Ala ma kota" -> {"Ala", "ma", "kota"}
+    public static String[] split1(String message){
+        return message.split(" ");
+    }
+    public static String[] split2(String message){
+        String[] string = new String[100];
+        boolean flag = true;
+        int i = 0;
+        int tmp = 0;
+        while(flag) {
+            int indexOfSpace = message.indexOf(' ', tmp);
+            String substring;
+            if(indexOfSpace == -1) {
+                substring = message.substring(tmp);
+            } else {
+                substring = message.substring(tmp, indexOfSpace);
+            }
+            tmp = indexOfSpace + 1;
+            string[i] = substring;
+            i++;
+            if(indexOfSpace == -1){
+                flag = false;
+            }
+        }
+        return null;
+    }
+    public static String[] split3(String message){
+        return null;
+    }
+
+
 
     public static boolean startsWith1(String message, String expression){
         return message.startsWith(expression);
